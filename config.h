@@ -1,0 +1,36 @@
+#pragma once
+
+
+#define EE_HANDS
+
+// Split functionality
+#define SPLIT_LAYER_STATE_ENABLE
+#define SPLIT_LED_STATE_ENABLE
+#define SPLIT_MODS_ENABLE
+#define SPLIT_WPM_ENABLE
+#define SPLIT_OLED_ENABLE
+
+// Unicode configuration
+#define UNICODE_SELECTED_MODES UNICODE_MODE_MACOS, UNICODE_MODE_LINUX, UNICODE_MODE_WINCOMPOSE
+
+// OLED configuration
+#define OLED_FONT_H "./keyboards/crkbd/keymaps/luis-keymap/glcdfont.c"
+#define OLED_TIMEOUT 600000 // 10 min
+#define OLED_BRIGHTNESS 255
+
+// USB suspend
+#define RGB_DISABLE_WHEN_USB_SUSPENDED
+#define USB_SUSPEND_WAKEUP_DELAY 3000
+
+#ifdef RGB_MATRIX_ENABLE
+  #define RGB_MATRIX_TIMEOUT 600000 // 10 min
+  #define RGB_MATRIX_FRAMEBUFFER_EFFECTS
+  #define RGB_MATRIX_LED_PROCESS_LIMIT (DRIVER_LED_TOTAL + 4) / 5
+  #define RGB_MATRIX_LED_FLUSH_LIMIT 16
+  #define RGB_MATRIX_MAXIMUM_BRIGHTNESS 100
+  #define RGB_MATRIX_HUE_STEP 8
+  #define RGB_MATRIX_SAT_STEP 8
+  #define RGB_MATRIX_VAL_STEP 8
+  #define RGB_MATRIX_SPD_STEP 10
+  #define ENABLE_RGB_MATRIX_CYCLE_LEFT_RIGHT
+#endif
